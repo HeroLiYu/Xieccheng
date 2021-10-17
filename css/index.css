@@ -1,0 +1,405 @@
+body{
+    max-width: 540px;
+    min-width: 320px;
+    margin: 0 auto;
+    font: normal 14px/1.5 Tahoma,"Lucida Grande","Verdana","Microsoft Yahei",STXhei,hei;
+    color: #000;
+    background: #f2f2f2;
+    overflow-x: hidden;/*永远不会出现水平滚东条*/
+    -webkit-tap-highlight-color: transparent;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* 搜索模块 */
+.search{
+    position: fixed;/*固定定位的盒子需要写宽度*/
+    width: 100%;
+    height: 44px;
+    max-width: 540px;
+    min-width: 320px;
+    background-color: #F6F6F6;
+    transform: translate(-50%);/*给了left值所以需要移动回来*/
+    top: 0;
+    left: 50%;
+    display: flex;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+div{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.user{
+    display: block;
+    width: 44px;
+    height: 44px;
+    font-size: 12px;
+    text-align: center;
+    color: #2eaae0;
+    
+}
+.user::before{
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    background: url(../images/sprite.png) no-repeat -59px -194px;
+    background-size: 104px auto;
+    margin: 4px auto -2px;
+}
+.searchinput{
+    flex: 1;/*自适应*/
+    height: 26px;
+    border: 1px solid #ccc;
+    margin:7px 9px ;
+    border-radius: 5px;
+    font-size: 12px;
+    color: #666;
+    line-height: 26px;
+    padding-left:25px ;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0,0, 0.2);
+}
+/* 放大镜用为元素精灵图做 */
+.searchinput::before{
+    position: absolute;
+    top: 14px;
+    left: 16px;
+    content: "";
+    display: block;
+    background: url("../images/sprite.png") no-repeat -60px -280px;
+    width: 15px;
+    height: 16px;
+    background-size: 104px auto;
+  
+}
+/* 焦点图样式 */
+.focus{
+    padding-top: 44px;
+}
+.focus img{
+    width: 100%;
+
+}
+/* 局部导航栏 */
+.localNav{
+    display: flex;
+    height: 64px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin: 3px 4px;
+    
+}
+.localNav li{
+    flex: 1;
+}
+.localNav a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #222222;
+    font-size: 12px;
+}
+.localNavIcon{
+    width: 32px;
+    height: 32px;
+    margin-top: 8px;
+}
+.Icon1{
+    background: url(../images/localnav_bg.png) no-repeat 0px 0px;
+    background-size: 32px auto;
+}
+.Icon2{
+    background: url(../images/localnav_bg.png) no-repeat 0px -32px;
+    background-size: 32px auto;
+}
+.Icon3{
+    background: url(../images/localnav_bg.png) no-repeat 0px -64px;
+    background-size: 32px auto;
+}
+.Icon4{
+    background: url(../images/localnav_bg.png) no-repeat 0px -96px;
+    background-size: 32px auto;
+}
+.Icon5{
+    background: url(../images/localnav_bg.png) no-repeat 0px -128px;
+    background-size: 32px auto;
+}
+/* 导航栏样式 */
+nav{
+    overflow: hidden;
+    border-radius: 8px;
+    margin: 0 4px 3px;
+}
+.navCommon{
+    height: 88px;
+    display: flex;
+}
+.commonColor1{
+    background-color: #FA6A54;
+}
+.commonColor2{
+    background-color: #4EA0ED;
+}
+.commonColor3{
+    background-color: #49C98B;
+}
+.navItems{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.navItems:nth-child(-n+2){
+    border-right:1px solid #fff ;
+}
+.navCommon:nth-child(2){
+    margin: 3px 0;
+}
+.navItems a{
+    flex: 1;
+    color: #fff;
+    font-size: 14px;
+    line-height: 44px;
+    text-align: center;
+    text-shadow: 1px 1px rgba(0, 0, 0,0.2);
+}
+.navItems a:nth-child(1){
+    border-bottom:  1px solid #fff;
+}
+/* 去掉第一个盒子里的边框 */
+.navItems:nth-child(1) a{
+    border: 0;
+}
+.pic1{
+    background: url(../images/hotel.png) no-repeat bottom center;/*靠左对齐 水平居中*/
+    background-size: 121px auto;
+}
+.pic2{
+    height: 32px;
+    width: 40px;
+    background: url(../images/sprite.png) -4px -296px;
+    background-size: 104px auto;
+  margin-left: 38px;
+  vertical-align: middle;
+}
+.pic3{
+    height: 46px;
+    width: 40px;
+    background: url(../images/sprite.png) 1px -182px;
+    background-size: 104px auto;
+  margin-left: 38px;
+  vertical-align: middle;
+}
+/* 小导航栏 */
+.littleNav1{
+    width: 100%;
+    height: 57px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.littleNav1 li{
+    flex: 1;
+ 
+}
+.littleNav1 li a{
+    text-decoration: none;
+    color: #222222;
+    font-size: 12px;
+  text-align: center;
+  line-height: 25px;
+}
+.world{
+    color: #222222;
+    font-size: 12px;
+  text-align: center;
+  line-height: 25px;
+  margin-left: 3px;
+}
+.littleIcon{
+    display: block;
+    height: 25px;
+    width: 24px;
+    margin-top: 12px;
+    margin-left: 15px;
+}
+.little1{
+    background: url(../images/subnav-bg.png)0 0;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little2{
+    background: url(../images/subnav-bg.png)0 -25px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little3{
+    background: url(../images/subnav-bg.png)0 -53px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little4{
+    background: url(../images/subnav-bg.png)0 -274px;
+    background-size: 24px;
+   
+    height: 24px;
+    height: 26px;
+}
+.little5{
+    background: url(../images/subnav-bg.png)0 -85px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.littleNav2{
+    width: 100%;
+    height: 57px;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.littleNav2 li{
+    flex: 1;
+ 
+}
+.little2_1{
+    background: url(../images/subnav-bg.png) 0 -139px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little2_2{
+    background: url(../images/subnav-bg.png) 0 -168px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little2_3{
+    background: url(../images/subnav-bg.png) 0 -114px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little2_4{
+    background: url(../images/subnav-bg.png) 0 -200px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+.little2_5{
+    background: url(../images/subnav-bg.png) 0 -250px;
+    background-size: 24px;
+    vertical-align: middle;
+}
+/* 热卖活动样式 */
+.hotactivity{
+    position: relative;
+    width: 539px;
+    height: 45px;
+
+    border-top: 1px solid #DBDBDB;
+    margin-top: 9px;
+}
+.hot{
+    display: block;
+    width: 73px;
+    height: 20px;
+    margin-top: 13px;
+    margin-left: 9px;
+    background: url(../images/hot.png) 0 -17px;
+    background-size: 73px;
+}
+.many{
+    display: block;
+    width: 109px;
+    height: 20px;
+    background-color: #FF516B;
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    border-radius: 10px;
+    color: #FFF6F9;
+    font-size: 12px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 20px;
+}
+/* 展示图片部分 */
+.show{
+    width: 539px;
+    height: 190px;
+    display: flex;
+}
+.show a{
+    flex: 1;
+    border-bottom: 1px solid #F2F2F2;
+    border-right:1px solid #F2F2F2 ;
+}
+.show a img{
+    width: 100%;
+    height: 100%;
+}
+.special{
+    width: 539px;
+    height: 117px;
+    background-color: pink;
+    display: flex;
+    
+}
+.special a{
+    flex: 1;
+    border-bottom: 1px solid #F2F2F2;
+    border-right:1px solid #F2F2F2 ;
+}
+.special a img{
+    width: 100%;
+    height: 100%;
+}
+/* 底部联系我们样式 */
+.linkUs{
+    width: 539px;
+    height: 45px;
+    background-color: #FFFFFF;
+    margin-top: 11px;
+    display: flex;
+}
+.linkUs a{
+    flex: 1;
+    position: relative;
+}
+.linkUs  span{
+    display: block;
+    height: 21px;
+    width: 21px;
+
+    margin-left: 92PX;
+    margin-top: 7px;
+}
+.link1{
+    background: url(../images/sprite.png) -56px -149px;
+    background-size: 104px;
+}
+.link2{
+    background: url(../images/sprite.png) -56px -173px;
+    background-size: 104px;
+}
+.link3{
+    background: url(../images/sprite.png) -60px -310px;
+    background-size: 104px;
+}
+.linkUs p{
+    width: 65px;
+    height: 15px;
+ text-decoration: none;
+        position: absolute;
+    top:16px ;
+    left: 71px;
+    text-align: center;
+    line-height:15px ;
+    color: #B0B0B0;
+    font-size: 12px;
+}
